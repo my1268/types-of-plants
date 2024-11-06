@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+#header {
+  display: flex;
+  font-size: 30px;
+}
+
+.logo {
+}
+
+.nav {
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.nav li a {
+}
+
+.login {
+}
+/* button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#plantInfo {
+  margin-top: 20px;
+}
+
+#plantInfo div {
+  margin-bottom: 20px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+} */
