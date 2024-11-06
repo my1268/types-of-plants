@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>식물 목록 가져오기</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js" defer></script>
   </head>
   <body>
     <div id="wrap">
       <header id="header">
-        <div class="logo"></div>
-        <nav class="nav">
-          <ul>
-            <!-- <li><a href="#1">about</a></li>
-            <!-- <li class="login"><a href="#">로그인</a></li> -->
-          </ul>
-        </nav>
-      </header>
-      <article id="slide">
-        <div class="sliderWrap">
-          <!-- <img src="" class="slider img1"/> -->
-          <!-- <img src="" class="slider img2"/> -->
-          <!-- <img src="" class="slider img3"/> -->
+        <div class="headerWrap">
+          <div class="logo">openfarm</div>
+          <nav class="nav">
+            <ul>
+              <li class="number"><a href="#">Become a Member</a></li>
+              <li class="number"><a href="#">로그인</a></li>
+            </ul>
+          </nav>
+          <div class="slide">
+            <img src="img/이미지1.jpg" alt="이미지1" class="slider img1" />
+            <img src="img/이미지2.jpg" alt="이미지2" class="slider img2" />
+            <img src="img/이미지3.jpg" alt="이미지3" class="slider img3" />
+          </div>
         </div>
-        <div class="search"></div>
-      </article>
+      </header>
+      <article id="search"></article>
       <section id="contents"></section>
       <footer id="footer"></footer>
     </div>
-    <!-- <h1>식물 목록 정보</h1>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <h1>식물 목록 정보</h1>
     <button id="fetchData">데이터 가져오기</button>
-    <div id="plantInfo"></div> -->
+    <div id="plantInfo"></div>
   </body>
 </html>
