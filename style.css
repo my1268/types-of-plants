@@ -5,71 +5,149 @@
   text-decoration: none;
 }
 
-#header .headerWrap {
+#header {
   width: 100%;
-  height: 700px;
+  height: 800px;
   background-color: rgb(216, 213, 219);
   display: flex;
   position: relative;
 }
 
-#header .headerWrap .logo {
+#header .logo {
   position: absolute;
   left: 0;
   top: 0;
   font-size: 70px;
   font-weight: 800;
-  padding: 20px 30px;
-  color: rgb(38, 165, 55);
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
   z-index: 1;
 }
-#header .headerWrap .nav {
+#header .nav {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 30px;
+  font-size: 25px;
   z-index: 1;
 }
-#header .headerWrap ul {
+#header ul {
   display: flex;
 }
-#header .headerWrap ul li {
+#header ul li {
   padding: 30px;
 }
 
-#header .headerWrap ul li a {
+#header ul li a {
   display: inline-block;
   background-color: rgb(107, 105, 105);
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-bottom: 7px solid rgb(56, 148, 79);
   border-radius: 15px;
 }
-#header .headerWrap ul li a:hover {
-  background-color: rgb(44, 44, 44);
+#header ul li a:hover {
+  background-color: rgb(77, 76, 76);
 }
 
-#header .headerWrap .slide {
-  display: flex;
-}
-#header .headerWrap .slide .slider:first-child {
-  display: block;
-}
-#header .headerWrap .slide .slider {
+#header p {
+  z-index: 1;
   position: absolute;
-  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#header p .header-text1 {
+  font-size: 70px;
+  color: white;
+  font-weight: 800;
+}
+#header p .header-text2 {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+}
+
+#header p .header-text3 {
+  margin-top: 50px;
+  display: inline-block;
+  font-size: 40px;
+  color: white;
+  font-weight: 900;
+  padding: 10px 20px;
+  background-color: rgb(84, 85, 85, 0.8);
+  border-radius: 10px;
+}
+#header p .header-text3:hover {
+  background-color: rgb(77, 76, 76);
+}
+
+#header .bi-arrow-down-square {
+  font-size: 45px;
+  color: rgb(238, 233, 233);
+}
+
+#header .slide .sliderWrap .slider {
+  vertical-align: top;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-#header .headerWrap .slide img {
-  vertical-align: top;
+#header .slide .sliderWrap .slider.s1 {
+  background-image: url("img/이미지1.jpg");
 }
 
-#search {
+#header .slide .sliderWrap .slider.s2 {
+  background-image: url("img/이미지2.jpg");
+}
+
+#header .slide .sliderWrap .slider.s3 {
+  background-image: url("img/이미지3.jpg");
+}
+
+#header .search {
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 150px;
-  background-color: rgb(230, 223, 215);
+  max-width: 550px;
+  margin: 0 auto;
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+}
+
+#header .search .search-input {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+#header .search .search-button {
+  padding: 15px 20px;
+  font-size: 16px;
+  background-color: rgb(84, 85, 85, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+#header .search .search-button:hover {
+  background-color: rgb(77, 76, 76);
 }
 
 #contents {
@@ -90,9 +168,5 @@ button {
 }
 
 #plantInfo {
-  margin-top: 20px;
-}
-
-#plantInfo div {
-  margin-bottom: 20px;
+  display: flex;
 }
