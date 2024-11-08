@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 페이지 정보 숨기기
   document.getElementById("pageInfo").style.display = "none";
+  document.getElementById("pagination").style.display = "none";
 
   document.getElementById("fetchData").addEventListener("click", function () {
     const searchTerm = document.getElementById("searchInput").value; // 입력된 검색어
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 페이지 정보 표시
         document.getElementById("pageInfo").style.display = "block";
+        document.getElementById("pagination").style.display = "block";
         document.getElementById(
           "pageInfo"
         ).innerText = `Page ${currentPage} / ${totalPages}`;
