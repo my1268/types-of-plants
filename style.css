@@ -81,6 +81,7 @@
   padding: 10px 20px;
   background-color: rgb(84, 85, 85, 0.8);
   border-radius: 10px;
+  cursor: pointer;
 }
 #header p .header-text3:hover {
   background-color: rgb(77, 76, 76);
@@ -161,6 +162,7 @@
   height: 500px;
   background-color: rgb(57, 58, 58);
 }
+
 button {
   padding: 10px 15px;
   font-size: 16px;
@@ -169,4 +171,7 @@ button {
 
 #plantInfo {
   display: flex;
+  flex-wrap: wrap; /* 여러 줄로 감싸기 */
+  gap: 16px; /* 이미지 간 간격 */
+  justify-content: center; /* 가운데 정렬 */
 }

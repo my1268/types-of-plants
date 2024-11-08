@@ -42,7 +42,7 @@
             id="searchInput"
             class="search-input"
             placeholder="검색어를 입력하세요"
-            value="장미"
+            value=""
           />
           <button id="fetchData" class="search-button">
             <i class="bi bi-search"></i> 검색
@@ -51,19 +51,14 @@
       </header>
       <p>What flower do you like?</p>
       <div id="plantInfo"></div>
-
-      <!-- 페이지 전환 버튼 -->
       <div id="pagination">
         <button id="prevPage">이전 페이지</button>
         <button id="nextPage">다음 페이지</button>
       </div>
-
-      <!-- 현재 페이지 정보, 기본적으로 숨김 -->
-      <div id="pageInfo" style="display: none">Page 1 / 1</div>
-
+      <div id="pageInfo">Page 1 / 1</div>
+      <section id="contents"></section>
       <footer id="footer"></footer>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
