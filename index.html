@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>식물 목록 가져오기</title>
+    <title>types-of-plants</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,20 +13,19 @@
   <body>
     <div id="wrap">
       <header id="header">
-        <div class="logo">openfarm</div>
+        <a href="/" class="logo"> openPlants</a>
         <nav class="nav">
           <ul>
             <li><a href="#">Become a Member</a></li>
-            <li><a href="#">로그인</a></li>
+            <li><a href="#">Login</a></li>
           </ul>
         </nav>
         <p>
-          <span class="header-text1">Grow your food</span><br />
-          <span class="header-text2"
-            >Farm and garden through knowledge sharing</span
+          <span class="header-text1">Hello</span><br />
+          <span class="header-text2">Find a plant you think you'll like</span
           ><br />
           <span class="header-text3"
-            >아래 검색해봐 <i class="bi bi-arrow-down-square"></i
+            >Find it down there! <i class="bi bi-arrow-down-square"></i
           ></span>
         </p>
         <div class="slide">
@@ -49,14 +48,56 @@
           </button>
         </div>
       </header>
-      <p>What flower do you like?</p>
-      <div id="plantInfo"></div>
-      <div id="pagination">
-        <button id="prevPage">이전 페이지</button>
-        <button id="nextPage">다음 페이지</button>
-      </div>
-      <div id="pageInfo">Page 1 / 1</div>
-      <section id="contents"></section>
+      <article id="article">
+        <p class="plantInfo-title">What plant do you like?</p>
+        <div id="plantInfo"></div>
+        <div id="pagination">
+          <button id="prevPage">이전 페이지</button>
+          <button id="nextPage">다음 페이지</button>
+        </div>
+        <div id="pageInfo">Page 1 / 1</div>
+      </article>
+      <section id="contents">
+        <p class="section-text">Best plant 9</p>
+        <div class="content-images">
+          <div
+            class="image"
+            style="background-image: url('img/다육이.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/레몬나무.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/몬스테라.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/산세베리아.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/아이비.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/올리브나무.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/유칼립투스.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/칼라테아.jpg')"
+          ></div>
+          <div
+            class="image"
+            style="background-image: url('img/행운목.jpg')"
+          ></div>
+        </div>
+      </section>
       <footer id="footer"></footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

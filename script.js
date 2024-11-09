@@ -6,6 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("pageInfo").style.display = "none";
   document.getElementById("pagination").style.display = "none";
+  const images = document.querySelectorAll(".image");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1, // 요소의 10%가 보일 때 트리거
+    }
+  );
+
+  images.forEach((image) => {
+    observer.observe(image);
+  });
 
   document.getElementById("fetchData").addEventListener("click", function () {
     const searchTerm = document.getElementById("searchInput").value;
@@ -34,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
               ? `${plant.이미지파일경로}`
               : "";
             plantInfoDiv.innerHTML += `
-      <div>
-        <h2 style="font-size: 15px; text-align: center;">${plant.국명}</h2>
-        <img src="${imageUrl}" style="width: 230px; height: 200px; background-color: #f0f0f0; display: inline-block;" alt="No Image" />
-      </div>
+        <div>
+          <h2 style="font-size: 16px; color: white; text-align: center; margin-Bottom: 8px;">${plant.국명}</h2>
+          <img src="${imageUrl}" style="width: 200px; height: 200px; border-radius:20px;  background-color: rgb(84, 85, 85, 0.8); display: inline-block;" alt="No Image" />
+        </div>
             `;
           });
         } else {
