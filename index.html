@@ -17,7 +17,8 @@
         <nav class="nav">
           <ul>
             <li><a href="#">Become a Member</a></li>
-            <li><a href="#">Login</a></li>
+            <div class="overlay"></div>
+            <li class="pop-loginOpen"><a href="#">Login</a></li>
           </ul>
         </nav>
         <p>
@@ -57,48 +58,90 @@
         </div>
         <div id="pageInfo">Page 1 / 1</div>
       </article>
+      <p class="p-title">Best plant 9</p>
       <section id="contents">
-        <p class="section-text">Best plant 9</p>
         <div class="content-images">
-          <div
-            class="image"
-            style="background-image: url('img/다육이.jpg')"
-          ></div>
-          <div
-            class="image"
-            style="background-image: url('img/레몬나무.jpg')"
-          ></div>
-          <div
-            class="image"
-            style="background-image: url('img/몬스테라.jpg')"
-          ></div>
+          <div class="image" style="background-image: url('img/다육이.jpg')">
+            <p class="image-title">다육이</p>
+          </div>
+          <div class="image" style="background-image: url('img/레몬나무.jpg')">
+            <p class="image-title">레몬나무</p>
+          </div>
+          <div class="image" style="background-image: url('img/몬스테라.jpg')">
+            <p class="image-title">몬스테라</p>
+          </div>
           <div
             class="image"
             style="background-image: url('img/산세베리아.jpg')"
-          ></div>
-          <div
-            class="image"
-            style="background-image: url('img/아이비.jpg')"
-          ></div>
+          >
+            <p class="image-title">산세베리아</p>
+          </div>
+          <div class="image" style="background-image: url('img/아이비.jpg')">
+            <p class="image-title">아이비</p>
+          </div>
           <div
             class="image"
             style="background-image: url('img/올리브나무.jpg')"
-          ></div>
+          >
+            <p class="image-title">올리브나무</p>
+          </div>
           <div
             class="image"
             style="background-image: url('img/유칼립투스.jpg')"
-          ></div>
-          <div
-            class="image"
-            style="background-image: url('img/칼라테아.jpg')"
-          ></div>
-          <div
-            class="image"
-            style="background-image: url('img/행운목.jpg')"
-          ></div>
+          >
+            <p class="image-title">유칼립투스</p>
+          </div>
+          <div class="image" style="background-image: url('img/칼라테아.jpg')">
+            <p class="image-title">칼라테아</p>
+          </div>
+          <div class="image" style="background-image: url('img/행운목.jpg')">
+            <p class="image-title">행운목</p>
+          </div>
         </div>
       </section>
-      <footer id="footer"></footer>
+      <footer id="footer">
+        <div class="footer-content">
+          <p>&copy; 2024 openPlants. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          </div>
+          <div class="email">
+            <a href="#" class="social-icon">
+              <i class="bi bi-envelope"></i> my1268@naver.com
+            </a>
+          </div>
+        </div>
+      </footer>
+      <div class="pop-loginBox">
+        <i class="bi bi-x"></i>
+        <form class="login-form" method="POST">
+          <h1>로그인</h1>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="비밀번호"
+            required
+          />
+          <button type="submit">로그인</button>
+        </form>
+        <div class="sub-login-form">
+          <a href="#" class="sub-form">회원가입</a>
+          <span>|</span>
+          <a href="#" class="sub-form">아이디 찾기</a>
+          <span>|</span>
+          <a href="#" class="sub-form">비밀번호 찾기</a>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("pagination").style.display = "none";
   const images = document.querySelectorAll(".image");
 
-  const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver( // DOM 요소가 뷰포트와 교차하는지를 감시하는 기능을 제공하는 웹 API
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          // isIntersecting은 IntersectionObserver의 속성
           entry.target.classList.add("visible");
         } else {
           entry.target.classList.remove("visible");
@@ -19,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.1, // 요소의 10%가 보일 때 트리거
+      threshold: 0.3, //얼만큼 뷰포트에 보일 때
     }
   );
 
   images.forEach((image) => {
-    observer.observe(image);
+    observer.observe(image); // observe는 IntersectionObserver 객체의 메서드 (가시성 상태를 추적)
   });
 
   document.getElementById("fetchData").addEventListener("click", function () {
@@ -92,4 +93,16 @@ $(function () {
     $(".slider").eq(nextIndex).fadeIn(1000);
     currentIndex = nextIndex;
   }, 3000);
+  $(".pop-loginOpen").on("click", function () {
+    $(".overlay").show();
+    $(".pop-loginBox").show();
+    $("body").addClass("no-scroll"); // 스크롤 비활성화
+  });
+
+  // 닫기 버튼(.bi-x) 클릭 시 overlay와 모달 박스를 숨기고 스크롤 활성화
+  $(".bi-x").on("click", function () {
+    $(".overlay").hide();
+    $(".pop-loginBox").hide();
+    $("body").removeClass("no-scroll"); // 스크롤 다시 활성화
+  });
 });
