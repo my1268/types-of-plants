@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $(function () {
   let currentIndex = 0;
+
   $(".slider").not(":first").hide();
   setInterval(function () {
     let nextIndex = (currentIndex + 1) % 3;
@@ -93,16 +94,15 @@ $(function () {
     $(".slider").eq(nextIndex).fadeIn(1000);
     currentIndex = nextIndex;
   }, 3000);
+
   $(".pop-loginOpen").on("click", function () {
     $(".overlay").show();
     $(".pop-loginBox").show();
-    $("body").addClass("no-scroll"); // 스크롤 비활성화
+    $("body").addClass("noScroll");
   });
-
-  // 닫기 버튼(.bi-x) 클릭 시 overlay와 모달 박스를 숨기고 스크롤 활성화
   $(".bi-x").on("click", function () {
     $(".overlay").hide();
     $(".pop-loginBox").hide();
-    $("body").removeClass("no-scroll"); // 스크롤 다시 활성화
+    $("body").removeClass("noScroll");
   });
 });
