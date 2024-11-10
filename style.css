@@ -26,24 +26,21 @@
 }
 #header .nav {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 30px;
+  top: 40px;
   font-size: 25px;
   z-index: 1;
 }
 #header ul {
   display: flex;
 }
-#header ul li {
-  padding: 30px;
-}
 
 #header ul li a {
-  display: inline-block;
+  display: block;
   background-color: rgb(107, 105, 105);
   color: white;
-  padding: 5px 10px;
-  border-bottom: 7px solid rgb(56, 148, 79);
+  padding: 10px 25px;
+  border-bottom: 7px solid white;
   border-radius: 15px;
 }
 #header ul li a:hover {
@@ -90,6 +87,30 @@
 #header .bi-arrow-down-square {
   font-size: 45px;
   color: rgb(238, 233, 233);
+}
+
+@media (max-width: 650px) {
+  #header .nav {
+    top: 30px;
+  }
+
+  #header .logo {
+    font-size: 50px;
+  }
+
+  #header .nav ul li a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  #header p .header-text1 {
+    font-size: 40px;
+  }
+  #header p .header-text2 {
+    font-size: 30px;
+  }
+  #header p .header-text3 {
+    font-size: 20px;
+  }
 }
 
 #header .slide .sliderWrap .slider {
@@ -152,6 +173,8 @@
 }
 
 #article {
+  width: 100%;
+  height: 430px;
   background-color: rgb(77, 76, 76);
 }
 
@@ -196,6 +219,11 @@
   padding-bottom: 20px;
 }
 
+@media (max-width: 650px) {
+  #article {
+    height: 1200px;
+  }
+}
 .p-title {
   width: 100%;
   height: 100px;
@@ -210,7 +238,7 @@
   background-color: rgb(84, 85, 85, 0.8);
   position: relative;
   width: 100%;
-  min-height: 1100px;
+  min-height: 100px;
 }
 
 .content-images {
@@ -230,9 +258,32 @@
   border-radius: 8px;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition: opacity 2s ease;
   cursor: pointer;
   margin-top: 40px;
+  animation: increase 1s forwards;
+}
+
+@keyframes increase {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.image:hover {
+  animation: decrease 1.5s forwards;
+}
+
+@keyframes decrease {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
 
 .image.visible {
@@ -271,6 +322,7 @@
     align-items: center;
   }
 }
+
 #footer {
   background-color: rgb(57, 58, 58);
   color: white;

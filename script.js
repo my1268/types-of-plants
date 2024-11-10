@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("pageInfo").style.display = "none";
   document.getElementById("pagination").style.display = "none";
+
   const images = document.querySelectorAll(".image");
 
   const observer = new IntersectionObserver( // DOM 요소가 뷰포트와 교차하는지를 감시하는 기능을 제공하는 웹 API
@@ -28,6 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(image); // observe는 IntersectionObserver 객체의 메서드 (가시성 상태를 추적)
   });
 
+  function updateGridLayout() {
+    const plantInfoDiv = document.getElementById("plantInfo");
+    if (window.innerWidth <= 650) {
+      plantInfoDiv.style.gridTemplateColumns = "repeat(2, 1fr)";
+    } else {
+      plantInfoDiv.style.gridTemplateColumns = "repeat(8, 1fr)";
+    }
+  }
+
+  // 윈도우 크기 변경 시 그리드 레이아웃 업데이트
+  window.addEventListener("resize", updateGridLayout);
+
   document.getElementById("fetchData").addEventListener("click", function () {
     const searchTerm = document.getElementById("searchInput").value;
     const API_KEY =
@@ -49,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
           "pageInfo"
         ).innerText = `Page ${currentPage} / ${totalPages}`;
 
+        // 그리드 스타일 초기화
+        plantInfoDiv.style.display = "grid";
+
         if (response.data.data && response.data.data.length > 0) {
           response.data.data.forEach((plant) => {
             const imageUrl = plant.이미지파일경로
@@ -56,14 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
               : "";
             plantInfoDiv.innerHTML += `
         <div>
-          <h2 style="font-size: 16px; color: white; text-align: center; margin-Bottom: 8px;">${plant.국명}</h2>
-          <img src="${imageUrl}" style="width: 200px; height: 200px; border-radius:20px;  background-color: rgb(84, 85, 85, 0.8); display: inline-block;" alt="No Image" />
+          <h2 style="font-size: 12px; color: white; text-align: center; margin-bottom: 8px;">${plant.국명}</h2>
+          <img src="${imageUrl}" style="width: 200px; height: 200px; border-radius: 20px; background-color: rgb(84, 85, 85, 0.8); display: block; margin: 0 auto;" alt="No Image" />
         </div>
-            `;
+      `;
           });
         } else {
           plantInfoDiv.innerHTML = `<p>검색 결과가 없습니다.</p>`;
         }
+        updateGridLayout();
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -76,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("fetchData").click();
     }
   });
+
   document.getElementById("prevPage").addEventListener("click", function () {
     if (currentPage > 1) {
       currentPage -= 1;
