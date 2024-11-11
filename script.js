@@ -29,20 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(image); // observe는 IntersectionObserver 객체의 메서드 (가시성 상태를 추적)
   });
 
-  function updateGridLayout() {
+  function mediaGridLayout() {
     const plantInfoDiv = document.getElementById("plantInfo");
+    const article = document.getElementById("article");
+
     if (window.innerWidth <= 650) {
       plantInfoDiv.style.gridTemplateColumns = "repeat(2, 1fr)";
+      article.style.minHeight = "1130px";
     } else {
       plantInfoDiv.style.gridTemplateColumns = "repeat(8, 1fr)";
+      article.style.minHeight = "";
     }
   }
-
-  // 윈도우 크기 변경 시 그리드 레이아웃 업데이트
-  window.addEventListener("resize", updateGridLayout);
+  window.addEventListener("resize", mediaGridLayout);
 
   document.getElementById("fetchData").addEventListener("click", function () {
     const searchTerm = document.getElementById("searchInput").value;
+    const article = document.getElementById("article");
+    article.style.height = "430px";
     const API_KEY =
       "1Imok%2BBNzN03bVQvifpudhkg%2F8%2BYJ0sQazGUPNX3d8%2BctD5XvOOgxv4R2JjZfB8Ln3nzXIOgC7%2BApCnlkc9B7A%3D%3D";
     const url = `https://api.odcloud.kr/api/15116414/v1/uddi:b63f89a7-c57b-43c6-8868-f68d44ce17e5?page=${currentPage}&perPage=${itemCounts}&returnType=JSON&serviceKey=${API_KEY}&search=${encodeURIComponent(
@@ -62,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "pageInfo"
         ).innerText = `Page ${currentPage} / ${totalPages}`;
 
-        // 그리드 스타일 초기화
         plantInfoDiv.style.display = "grid";
 
         if (response.data.data && response.data.data.length > 0) {
@@ -80,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           plantInfoDiv.innerHTML = `<p>검색 결과가 없습니다.</p>`;
         }
-        updateGridLayout();
+        mediaGridLayout(); // 데이터가 로드된 후 화면 크기에 맞는 그리드 레이아웃을 적용하기 위해 호출
       })
       .catch((error) => {
         console.error("Error:", error);

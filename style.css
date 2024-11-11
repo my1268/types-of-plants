@@ -89,30 +89,6 @@
   color: rgb(238, 233, 233);
 }
 
-@media (max-width: 650px) {
-  #header .nav {
-    top: 30px;
-  }
-
-  #header .logo {
-    font-size: 50px;
-  }
-
-  #header .nav ul li a {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-  #header p .header-text1 {
-    font-size: 40px;
-  }
-  #header p .header-text2 {
-    font-size: 30px;
-  }
-  #header p .header-text3 {
-    font-size: 20px;
-  }
-}
-
 #header .slide .sliderWrap .slider {
   vertical-align: top;
   position: absolute;
@@ -174,7 +150,7 @@
 
 #article {
   width: 100%;
-  height: 430px;
+  height: 70px;
   background-color: rgb(77, 76, 76);
 }
 
@@ -219,11 +195,6 @@
   padding-bottom: 20px;
 }
 
-@media (max-width: 650px) {
-  #article {
-    height: 1200px;
-  }
-}
 .p-title {
   width: 100%;
   height: 100px;
@@ -302,6 +273,34 @@
   padding: 5px 10px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+}
+
+@media (max-width: 650px) {
+  #header .nav {
+    top: 30px;
+  }
+
+  #header .logo {
+    font-size: 50px;
+  }
+
+  #header .nav ul li a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  #header p .header-text1 {
+    font-size: 40px;
+  }
+  #header p .header-text2 {
+    font-size: 30px;
+  }
+  #header p .header-text3 {
+    font-size: 20px;
+  }
+
+  #article #pagination button {
+    margin: 0 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -456,6 +455,10 @@
 
 .noScroll {
   overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
