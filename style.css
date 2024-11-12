@@ -472,3 +472,13 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(100, 99, 99); /* 스크롤바 손잡이 색상 */
 }
+
+.like-count {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgb(223, 222, 222);
+  color: rgb(238, 160, 203);
+  padding: 5px;
+  border-radius: 5px;
+}

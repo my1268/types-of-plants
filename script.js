@@ -103,7 +103,47 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("fetchData").click();
     }
   });
+
+  const stars = document.querySelectorAll(".star-rating .fa-star");
+  let rating = 0;
+  stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+      rating = index + 1;
+      stars.forEach((s, i) => {
+        s.classList.toggle("checked", i < rating);
+      });
+    });
+  });
 });
+
+let likeCounts = {
+  likeCount1: 100,
+  likeCount2: 95,
+  likeCount3: 90,
+  likeCount4: 85,
+  likeCount5: 80,
+  likeCount6: 75,
+  likeCount7: 70,
+  likeCount8: 65,
+  likeCount9: 60,
+};
+
+function showConfirm(plantTitle, likeId) {
+  const userConfirmed = confirm(
+    `${plantTitle}에 좋아요를 누르시겠습니까? 확인을 누르면 좋아요가 1 증가합니다.`
+  );
+  if (userConfirmed) {
+    increaseLikes(likeId);
+  }
+}
+
+function increaseLikes(likeId) {
+  likeCounts[likeId]++;
+  const likeCountElement = document.getElementById(likeId);
+  likeCountElement.innerHTML =
+    '<i class="bi bi-heart"></i> : ' + likeCounts[likeId];
+}
+// <i class="bi bi-heart"></i> : ${likeCounts[likeId]} 템플릿 리터럴 문법
 
 $(function () {
   let currentIndex = 0;
