@@ -133,11 +133,11 @@ function showConfirm(plantTitle, likeId) {
     `${plantTitle}에 좋아요를 누르시겠습니까? 확인을 누르면 좋아요가 1 증가합니다.`
   );
   if (userConfirmed) {
-    increaseLikes(likeId);
+    increaseLike(likeId);
   }
 }
 
-function increaseLikes(likeId) {
+function increaseLike(likeId) {
   likeCounts[likeId]++;
   const likeCountElement = document.getElementById(likeId);
   likeCountElement.innerHTML =
