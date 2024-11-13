@@ -44,14 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", mediaGridLayout);
 
   document.getElementById("fetchData").addEventListener("click", function () {
-    const searchTerm = document.getElementById("searchInput").value;
     const article = document.getElementById("article");
     article.style.height = "430px";
     const API_KEY =
       "1Imok%2BBNzN03bVQvifpudhkg%2F8%2BYJ0sQazGUPNX3d8%2BctD5XvOOgxv4R2JjZfB8Ln3nzXIOgC7%2BApCnlkc9B7A%3D%3D";
-    const url = `https://api.odcloud.kr/api/15116414/v1/uddi:b63f89a7-c57b-43c6-8868-f68d44ce17e5?page=${currentPage}&perPage=${itemCounts}&returnType=JSON&serviceKey=${API_KEY}&search=${encodeURIComponent(
-      searchTerm
-    )}`;
+    const url = `https://api.odcloud.kr/api/15116414/v1/uddi:b63f89a7-c57b-43c6-8868-f68d44ce17e5?page=${currentPage}&perPage=${itemCounts}&returnType=JSON&serviceKey=${API_KEY}`;
     axios
       .get(url)
       .then((response) => {
@@ -102,17 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
       currentPage -= 1;
       document.getElementById("fetchData").click();
     }
-  });
-
-  const stars = document.querySelectorAll(".star-rating .fa-star");
-  let rating = 0;
-  stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
-      rating = index + 1;
-      stars.forEach((s, i) => {
-        s.classList.toggle("checked", i < rating);
-      });
-    });
   });
 });
 

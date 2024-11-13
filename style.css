@@ -114,33 +114,19 @@
 }
 
 #header .search {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 550px;
-  margin: 0 auto;
-  z-index: 1;
   position: absolute;
   left: 50%;
   top: 90%;
   transform: translate(-50%, -50%);
 }
 
-#header .search .search-input {
-  flex: 1;
-  padding: 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
-}
-
 #header .search .search-button {
   padding: 15px 20px;
-  font-size: 16px;
+  font-size: 25px;
   background-color: rgb(84, 85, 85, 0.8);
   color: #fff;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 5px;
   cursor: pointer;
 }
 
